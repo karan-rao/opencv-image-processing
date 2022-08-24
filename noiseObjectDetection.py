@@ -17,7 +17,7 @@ binary = cv2.adaptiveThreshold(blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.TH
 cv2.imshow("Binary",binary)
 
 # Find the contours on the binary image
-_, contours, _ = cv2.findContours(binary, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+contours, hierarchy = cv2.findContours(binary,cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 
 # Filtering out the contours less than 1000 pixel^2
 filtered = []
